@@ -1,0 +1,41 @@
+body {
+    background-color: #0f172a; /* Tailwind slate-900 */
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b; /* Tailwind slate-800 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155; /* Tailwind slate-700 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569; /* Tailwind slate-600 */
+}
+
+/* Pulse animation for the refresh button */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.refreshing i {
+    animation: spin-slow 1s linear infinite;
+}
+
+/* Row hover effect */
+tbody tr:hover {
+    background-color: rgba(30, 41, 59, 0.7); /* slate-800 translucent */
+}

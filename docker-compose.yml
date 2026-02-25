@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  monitorng-ont:
+    build: .
+    container_name: monitorng-ont-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GENIEACS_URL=http://192.168.20.197:7557
+      - GENIEACS_AUTH=admin:50223044
+      - WA_API_KEY=aef5d7d4db4e0e6e944b743ce482e64a2a52bf32
+      - WA_TARGET_NUMBERS=120363419343173494@g.us
+      - POLL_INTERVAL_MINUTES=5
+      - RX_WARNING_THRESHOLD="-27"
+      - TZ=Asia/Jakarta
+    # Optional: Map a logs directory if you eventually write logs to a file
+    # volumes:
+    #   - ./logs:/usr/src/app/logs
